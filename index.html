@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <!-- Responsive + Encoding Meta Tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Vue.JS API Call</title>
+</head>
+
+<body>
+    <div id="main" class="container">
+        <h1>{{ message }}</h1>
+        <label>Search name:</label>
+        <input type="text" v-model="search" placeholder="Search" > 
+        <div v-if = "responseAvailable == true"><br>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="comment in comments">
+                        <td><a v-bind:href="comment.id" target="_blank">{{comment.id}}</a></td>
+                        <td>{{comment.name}}</td>
+                        <td>{{comment.email}}</td>
+                        <td>{{comment.phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<!-- Vue and Custom JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="app.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
